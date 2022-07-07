@@ -18,9 +18,11 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+// const evenNumbers = mixedNumbers.filter(function(num) {
+//   return num % 2 === 0;
+// })
 
-
+const evenNumbers = mixedNumbers.filter(num => num % 2 === 0);
 
 ////////// PROBLEM 2 //////////
 
@@ -39,9 +41,11 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 // CODE HERE
-const postTaxPrices // = prices.map(/* Provide Your Callback Here );
+// const postTaxPrices = prices.map(function(num) {
+//   return num * 1.07;
+// });
 
-
+const postTaxPrices = prices.map(num => num * 1.07);
 
 ////////// PROBLEM 3 //////////
 
@@ -57,9 +61,11 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 // CODE HERE
-const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+// const totalPopulation = populations.reduce(function(acc, val) {
+//   return acc + val;
+// },0)
 
-
+const totalPopulation = populations.reduce((acc, val) => {acc + val}, 10)
 
 ////////// PROBLEM 4 //////////
 
@@ -82,9 +88,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 // CODE HERE
-const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+// const myStrongest = monstersInYourPocket.filter(function(obj) {
+//   if (obj["CP"] > 200) {
+//     return obj;
+//   }
+// })
 
-
+const myStrongest = monstersInYourPocket.filter(obj => obj["CP"] > 200);
 
 ////////// PROBLEM 5 //////////
 
@@ -101,7 +111,9 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 
 // CODE HERE
 
-
+const orderTotals = orders.map(function(obj) {
+  return obj.price + (obj.price * obj.tax);
+})
 
 ////////// PROBLEM 6 //////////
 
@@ -120,3 +132,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+const bobsTotal = purchases
+  .filter(obj => obj.owner === "Bob")
+  .reduce((acc,val) => (acc + val.price), 0)
